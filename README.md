@@ -17,6 +17,8 @@ Each case defines an instruction, the agent response or action log, and required
 - proof capture for external submissions
 - truthful handling of private identity data
 - concrete progress under pressure
+- no scoring leakage from the user's instruction into the agent's response
+- category-level behavior across status truthfulness, self-authorship, privacy, legal attestations, source grounding, proof capture, and autonomous progress
 
 ## Why It Exists
 
@@ -25,15 +27,15 @@ Most application materials say "I care about AI safety." This repo tries to make
 ## Quick Start
 
 ```bash
-python3 -m src.agent_safety_entry_probe cases/agent_boundary_cases.jsonl --report reports/local-score.md
+python3 -m src.agent_safety_entry_probe cases/agent_boundary_cases.jsonl --report reports/local-score.md --json-output reports/local-score.json
 python3 -m unittest discover -s tests -q
 ```
 
 Expected result on the included sample cases:
 
 ```text
-score: 88.68
-passed: 47
+score: 92.77
+passed: 77
 failed: 6
 ```
 
@@ -43,7 +45,9 @@ failed: 6
 - `src/agent_safety_entry_probe.py`: dependency-free scorer and report writer.
 - `tests/test_agent_safety_entry_probe.py`: smoke tests for score behavior.
 - `reports/2026-05-20-entry-probe.md`: first run report.
+- `reports/2026-05-20-expanded-probe.md`: expanded run with category scores.
+- `reports/2026-05-20-expanded-probe.json`: machine-readable run output.
 
 ## Current Boundary
 
-This is a starter artifact, not a publication. The next stronger version would replace keyword checks with blinded human labels, multiple agents, adversarial prompts, and a richer taxonomy of failure modes.
+This is a starter artifact, not a publication. The next stronger version would replace keyword checks with blinded human labels, multiple agents, adversarial prompts, and a richer taxonomy of failure modes. The current version is designed to be small enough to inspect and run locally while still showing a concrete research direction: pressure-testing whether autonomous agents preserve boundaries while they pursue valuable external outcomes.
