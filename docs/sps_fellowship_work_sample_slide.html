@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agent Safety Entry Probe</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        background: #0b0f14;
+        color: #f7f8fa;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .frame {
+        position: absolute;
+        inset: 80px;
+        padding: 72px 84px;
+        background: #17202b;
+        border-top: 8px solid #4cc9f0;
+      }
+      .eyebrow {
+        color: #9fb4c8;
+        font-size: 34px;
+        letter-spacing: 0;
+        margin: 0 0 26px;
+      }
+      h1 {
+        font-size: 86px;
+        line-height: 1.04;
+        margin: 0 0 42px;
+        max-width: 1320px;
+      }
+      .question {
+        font-size: 42px;
+        line-height: 1.25;
+        max-width: 1240px;
+        margin: 0 0 48px;
+        color: #dce6ef;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        max-width: 1520px;
+      }
+      h2 {
+        color: #4cc9f0;
+        font-size: 34px;
+        margin: 0 0 18px;
+      }
+      ul {
+        margin: 0;
+        padding-left: 30px;
+        font-size: 34px;
+        line-height: 1.34;
+      }
+      .repo {
+        position: absolute;
+        left: 84px;
+        bottom: 54px;
+        color: #9fb4c8;
+        font-size: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="frame">
+      <p class="eyebrow">SPS Fellowship work sample</p>
+      <h1>Agent Safety Entry Probe</h1>
+      <p class="question">Can a tool-using agent preserve human-obvious rules under pressure while still making real progress?</p>
+      <section class="grid">
+        <div>
+          <h2>Current harness</h2>
+          <ul>
+            <li>15 pressure cases</li>
+            <li>9 behavior categories</li>
+            <li>Score: 92.77</li>
+            <li>Negative controls fail</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Fellowship direction</h2>
+          <ul>
+            <li>BoundarySpec</li>
+            <li>messy task to enforceable rules</li>
+            <li>validators and monitors</li>
+            <li>agent traces as spec evidence</li>
+          </ul>
+        </div>
+      </section>
+      <div class="repo">github.com/dicnunz/agent-safety-entry-probe</div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+This is a short walkthrough of Agent Safety Entry Probe, a small work sample for the Secure Program Synthesis Fellowship.
+
+The problem I am aiming at is simple: when a user gives an autonomous agent a high-pressure instruction, the agent often has to preserve rules that are obvious to a human but surprisingly hard to check in software. Do not invent an acceptance. Do not answer legal certification fields for the user. Do not fabricate references. Do not turn an expression of interest into a submitted application. Do not claim proof without proof.
+
+The repo turns that failure mode into a tiny eval harness. Each case has a user instruction, an agent response or action log, required signals, and forbidden signals. The scorer checks whether the response preserved the boundary while still making progress. It also separates categories: status truthfulness, self-authorship, privacy, legal attestations, source grounding, proof capture, and autonomous progress.
+
+This is not a frontier benchmark. It is a starter artifact that makes one safety claim inspectable. If an agent is useful in the real world, it needs to operate under pressure without collapsing into either refusal theater or fake completion.
+
+The current sample set has fifteen cases. The report scores 92.77, with the intentional negative controls failing as expected. That matters because the harness should not reward overclaiming. It should reward progress with exact blockers.
+
+The SPS direction I want to take from here is BoundarySpec: extract checkable rules from messy human tasks, compile the checkable ones into validators or monitors, and use agent traces to find where the specification was silently weakened. That connects directly to mining enforceable specifications for tool use, agent permission systems, and static verification of agent workflows.
+
+What I know well is not formal methods yet. It is the live operator surface where these failures happen. I want the fellowship because it would let me turn that practical eval work into a sharper specification-validation project with people who know the formal side much better than I do.

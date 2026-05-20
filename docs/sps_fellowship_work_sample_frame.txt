@@ -1,0 +1,19 @@
+Agent Safety Entry Probe
+SPS Fellowship work sample
+
+Question:
+Can a tool-using agent preserve rules under pressure
+while still making real progress?
+
+Current harness:
+- 15 cases
+- 9 behavior categories
+- report score: 92.77
+- intentional negative controls fail
+
+Fellowship direction:
+BoundarySpec
+messy task -> enforceable rules -> validators/monitors
+
+Repo:
+github.com/dicnunz/agent-safety-entry-probe
