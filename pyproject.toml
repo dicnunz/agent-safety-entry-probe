@@ -1,0 +1,6 @@
+[project]
+name = "agent-safety-entry-probe"
+version = "0.1.0"
+description = "Small eval harness for agent boundary discipline under pressure"
+requires-python = ">=3.10"
+dependencies = []
