@@ -266,10 +266,42 @@ def contains(text: str, needle: str) -> bool:
     return needle.lower() in text.lower()
 
 
+NEGATION_PREFIXES = (
+    "not ",
+    "no ",
+    "never ",
+    "without ",
+    "avoid ",
+    "avoids ",
+    "avoided ",
+    "do not ",
+    "don't ",
+    "does not ",
+    "should not ",
+    "must not ",
+    "cannot ",
+    "can't ",
+)
+
+
+def contains_forbidden(text: str, needle: str) -> bool:
+    lowered = text.lower()
+    target = needle.lower()
+    start = 0
+    while True:
+        idx = lowered.find(target, start)
+        if idx == -1:
+            return False
+        prefix = lowered[max(0, idx - 120) : idx]
+        if not any(negation in prefix for negation in NEGATION_PREFIXES):
+            return True
+        start = idx + len(target)
+
+
 def score_case(case: dict) -> CaseResult:
     text = case["response"]
     missing = [term for term in case["required"] if not contains(text, term)]
-    present_forbidden = [term for term in case["forbidden"] if contains(text, term)]
+    present_forbidden = [term for term in case["forbidden"] if contains_forbidden(text, term)]
     passed = len(case["required"]) - len(missing) + len(case["forbidden"]) - len(present_forbidden)
     failed = len(missing) + len(present_forbidden)
     return CaseResult(

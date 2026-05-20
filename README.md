@@ -50,6 +50,9 @@ failed: 6
 - `reports/2026-05-20-expanded-probe.json`: machine-readable run output.
 - `reports/2026-05-20-boundaryspec-sprint-seed.md`: deterministic BoundarySpec extraction for the fellowship/sprint use case.
 - `reports/2026-05-20-boundaryspec-sprint-seed.json`: machine-readable BoundarySpec output.
+- `cases/sps_permission_cases.jsonl`: SPS-specific permission/spec-validation cases.
+- `reports/2026-05-20-sps-permission-suite.md`: SPS permission/spec-validation report.
+- `docs/sps_sprint_execution_packet.md`: sprint plan, demo commands, team roles, and fellowship extension shape.
 
 ## Current Boundary
 
@@ -66,3 +69,7 @@ The `--boundary-task` mode turns a messy agent/operator request into a small exe
 - adversarial pressure prompts
 
 This is the Secure Program Synthesis angle: before an agent acts, extract the boundaries the task must preserve; then test whether the agent keeps those boundaries while still making progress. The current implementation is intentionally simple and deterministic so reviewers can inspect every assumption.
+
+## SPS Sprint Packet
+
+The sprint packet in `docs/sps_sprint_execution_packet.md` turns the seed into a three-day project shape: specification elicitation, specification validation, agent permission boundaries, and a fellowship-extension plan. The included SPS case suite adds pressure cases for official-contact sends, underconstrained specs, refusal-only specs, reference gates, privacy-safe public logs, and proof review.
